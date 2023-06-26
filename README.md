@@ -1,10 +1,13 @@
 # Table Of Content
-- 1. INSTALLATION
+1. INSTALLATION
     - 1.1 python3
     - 1.2 sqlite
     - 1.3 Flask
     - 1.4 pipenv
-- 2. REPOSITORY
+2. REPOSITORY
+    - 2.1 真似するrepository
+    - 2.2 開発repositoryのdirectory tree
+3. Summary of preliminary tasks
 ---
 ## 1. Installation
 ### 1.1 python3
@@ -106,3 +109,41 @@ sqlite3 -version
 ## 2. Repository
 RPの出し方について　→ [How to submit a pull request](https://qiita.com/siida36/items/880d92559af9bd245c34)
 
+### 2.1 真似するrepository
+https://github.com/TAKANARI1985/flaskchat/tree/main
+
+> **注意事項**  
+> **Procfile, requirements.txtをコピペする必要はない** 
+
+### 2.2 開発repositoryのdirectory tree
+```shell
+.
+├── Pipfile
+├── Pipfile.lock
+├── README.md
+├── requirements.txt
+├── static
+│   └── css
+└── templates
+├── .gitignore
+
+4 directories, 4 files
+```
+
+- `Pipfile`, `Pipfile.lock`は`.gitignore`に入ってる => gitにプッシュせん
+- `20230626`現時点、`static/css`と`template` direcotryに何も入ってないのでローカルから`push`してもあげられない！
+  - 各自feature branchを作成して`mkdir`コマンドで上のdirectory構造を作成してください！
+  - feature branchの名前は割り当てられた機能で決める
+
+## 3. Summary of preliminary tasks
+- [Remote repository](https://github.com/Zheng-yuhao/gw_web_chat)から`pull`する
+- `pipenv`で仮想環境を作る
+- 仮想化環境で`Flask`が正常にインストールされている
+- ローカル環境でdirectory treeを真似する/作成する
+- 開発ツール
+  - vscode
+    - markdown extension install![Alt text](markdown_extension_image.png)  
+    インストール後このREADME.mdファイルを開き、![Alt text](button_image.png)  の右の点点点から左の2個目を押してpreview modeでこのREADMEファイルを見ることができます。
+
+---
+                 last edit:2023/06/26 by: @Zheng-yuhao
