@@ -146,4 +146,5 @@ https://github.com/TAKANARI1985/flaskchat/tree/main
     インストール後このREADME.mdファイルを開き、![Alt text](button_image.png)  の右の点点点から左の2個目を押してpreview modeでこのREADMEファイルを見ることができます。
 
 ---
-                 last edit:2023/06/26 by: @Zheng-yuhao
+last edit:2023/06/26 by: @Zheng-yuhao  
+*補足：トークンはMacOsのキーチェンのデータベースに含まれている。`command` + `space`でキーチェンを検索してからgithubを検索してください・・・出てくるはずです！絶対ファイルとかに記録しないでください、記録しようとしてもせめて単独のdirectoryの下に置いてください！*
