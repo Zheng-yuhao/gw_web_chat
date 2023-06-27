@@ -56,6 +56,7 @@ sqlite3 -version
     # 2.directoryを作成
     mkdir gw_web_chat
     cd gw_web_chat
+    git init
 
     # 3.git pull
     git remote add origin https://github.com/Zheng-yuhao/gw_web_chat.git
@@ -69,7 +70,7 @@ sqlite3 -version
     Flask==1.1.2
 
     # 4.仮想環境を生成(必ずgw_web_chat directoryにCD)
-    pipenv --python 3.8.7
+    pipenv --python 3.11.4
 
     # 5.仮想環境にパッケージをインストール
     pipenv install -r requirements.txt
@@ -155,3 +156,36 @@ last edit:2023/06/26 by: @Zheng-yuhao
 - [ ] :各々の担当部分を決める
 - [ ] :ブランチの命名規則の決定
 - [ ] :必要があればコードの解説
+
+---
+
+# 4. 流星向け研修
+- `Python3`
+  - `Python3`がインストールされている状態なら`pip`も入っているはず。
+- `pip`で`pipenv`ライブラリーのインストール
+- `git`のツールに関して [git for windows](https://prog-8.com/docs/git-env-win)
+- `git`の操作以外`power shell`を使ってください
+
+
+# 5. 担当部分の決定
+
+- 流星
+
+
+- 玲雄
+
+
+- 涼
+
+
+- 俺
+
+# 6. ブランチ名の命名規則の決定
+
+```txt
+feature/function_name
+
+e.g: feature/login, feature/web-chat-interface
+```
+
+# 7. コード解説
