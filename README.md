@@ -188,4 +188,32 @@ feature/function_name
 e.g: feature/login, feature/web-chat-interface
 ```
 
-# 7. コード解説
+# 7. コード解説＝マネする手順
+0. まずはね！githubを確認してください、`main/clone` branchに切り替えて、新しいVersionを`pull`してください！、やり方は覚えていませんか？？？
+1. `app.py`のみに対して開発を行う。
+2. まず、directory内で`app.py`を作成。
+   1. 注：先に`feature/<function_name>`を作ってください、新しいfeatureブランチで開発を行ってください。
+3. vscodeを立ち上げ、`app.py`を開き、各自担当の部分をコピペしてください。=>*6番を確認*
+4. vscodeの設定上、システムのデフォルトpythonを使っているため、コピペした後、波線みたいなエラーが出てくる。
+   1. 理由として、vscodeは”このprojectはPipenv環境の下にいる”であることがわかってないから。
+   2. 解決として、Vscodeの右下pythonのバージョンを選択できる。`pipenv`環境が正常にインストールされた場合は`python 3.11.4('<project_name>:pipenv')`という風に選択肢が出てくるので、それを選択したらオッケー！[参考資料](https://freeheroblog.com/vscode-pipenv/)
+5. 担当部分のコードのコピペが終了したら、pull request(PR)を出してみてください（俺をreviewerにするため、pull request出す画面でreviewer選択を行なってください。）
+   **注意@PRを出す時、`git push origin <ここはmainではない>`,<>の中は今自分が作ったfeature branchの名前で書いてください・・・意味は、origin(remote repository)で新しいfeatureブランチを作って、そっちにpushする。**
+6. 俺が承認してから、mergeするのボタンを各自押してみてください！何行目から書くのも決める必要がある。必ず守ってほしい！じゃないとコンフリクトが出てくる！prを出してからmergeする時のconflictが起こった場合の解決方法は俺もわからんので！
+
+7. 全員の開発が完了したら、`main/clone`ブランチに対してもう一度自分のローカルのrepositoryの更新を行なってください！これでローカル上のflask　appが走れるようになる！
+
+8. web appを走らせる方法
+まず、`pipenv shell`で仮想環境に入る。次は`set FLASK_APP=app.py`コマンドを入力し、`flask run`したらオッケー。
+
+もし以下のエラーが出たら
+```shell
+from jinja2 import escape
+ImportError: cannot import name 'escape' from 'jinja2' (/Users/zheng.yuhao/.local/share/virtualenvs/gw_web_chat-8qGCZwLj/lib/python3.11/site-packages/jinja2/__init__.py)
+```
+
+`pipenv install Flask==2.1.0`コマンドを実行してみてください！バージョンの問題らしいぜ！
+
+インストール終了後、`flask run`コマンド実行してください。
+
+これで、ローカルの5000portにアクセスできるぜ！！（portはなにってまだ覚えてる？）iphoneからもアクセスできるはずですけど、、、どうやら会社の MACはfirewallが設定されてて、外部からのアクセスはできんわ・・・残念。

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="login">
+
+    <div class="loginForm">
+        <h2>アカウント登録</h2>
+        <form action="/regist" method="POST">
+            <p><input type="text" name="name" placeholder="Name"></p>
+            <p><input type="text" name="password" placeholder="Password"></p>
+            <p><input type="submit" value="登録"></p>
+        </form>
+    </div>
+
+    <div class="loginForm">
+        <form action="/login" method="POST">
+            <h2>ログイン</h2>
+            <p><input type="text" name="name" placeholder="Name"></p>
+            <p><input type="text" name="password" placeholder="Password"></p>
+            <p><input type="submit" value="ログイン"></p>
+        </form>
+    </div>
+
+
+
+
+</div>
+
+
+{% endblock %}

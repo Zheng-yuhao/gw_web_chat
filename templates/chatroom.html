@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="roomTemp">
+    <h2>チャットルーム一覧</h2>
+    <div class="roomList">
+        {% for chat in tpl_chat_list %}
+
+        <div class="roomCard">
+            <p class="roomName">{{chat[1]}}</p>
+            <form action="/chat/{{chat[0]}}">
+                <input type="submit" value="チャットへ">
+            </form>
+        </div>
+
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+{% endblock %}
