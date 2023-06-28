@@ -21,7 +21,7 @@
 
 - This project was created to experience how to submit Git pull requests and image the development process.
 
-- We refer to [this repository](https://github.com/TAKANARI1985/flaskchat). The code is exactly the same cause our goal is to get hands-on experience with group work.Thanks to githubuse@TAKANARI1985 for creating the repository here.
+- We refer to [this repository](https://github.com/TAKANARI1985/flaskchat). The code is exactly the same cause our goal is to get hands-on experience with group work.Thanks to github　user@TAKANARI1985 for creating the repository here.
 
 ## 1. Requirement
 ### 1.1 python3
