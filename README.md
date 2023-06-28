@@ -277,3 +277,5 @@ last edit:20230628
 - `docker images`でimageが正常に作成されたかどうかを確認する
 - `sudo docker run -p 5000:5000 serori_web_chat`でコンテナを走らせる！！これで成功なはずや！！！おめてどう！
 - コンテナのweb applicationを確認するために！もう一個のshellを立ち上げて(centosのshell！)、`curl <ip-address>:5000`でやってみてください！返事があると成功やで！！！
+
+![Alt text](image.png)
