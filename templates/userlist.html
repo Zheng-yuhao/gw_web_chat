@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="userTemp">
+    <h2>ユーザーリスト</h2>
+    <div class="userList">     
+
+    {% for user_info in tpl_user_info %}
+
+        <div class="userCard">
+            <p class="userName">{{user_info[1]}}</p>
+            <form action="/chatroom/{{user_info[0]}}" method="POST">
+                <input type="submit" value="チャットする">
+            </form>
+        </div>
+
+    {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
