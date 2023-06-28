@@ -12,7 +12,7 @@
 4. 担当部分の決定
 5. ブランチ名の命名規則の決定
 6. コード解説＝マネする手順
-7. 次のステップは(準備中・・・) 
+7. Dockerでコンテナ化する 
 ---
 
 ## 0. WHAT IS THIS REPOSITORY FOR?
@@ -229,3 +229,51 @@ last edit:20230628
 次のステップは(準備中・・・)  
 1. Dockerのコンテナとしてローカル上に走らせる
 2. Docker imageを使ってGCP上にDeployする
+
+
+## 7. Dockerでコンテナ化する 
+
+### 7.1 Requirements
+
+- UTMでcentosを起動させる
+- centos上で`pip`コマンドツールをインストール
+    ```
+    sudo yum -y install git
+    ```
+- インストールした上で`git clone https://github.com/Zheng-yuhao/gw_web_chat.git`
+  - cloneしたdirectoryにCDする
+  - `ls`コマンドで内容を確認 => `Dockerfile`あるかどうかを確認する（mainブランチに更新するかどうかはまだ決めない）
+    - ない場合：`vim Dockerfile`を作成、以下の内容をコピペする
+    - ある場合：Dockerfileを確認する、以下の内容と合っているかどうか
+    ```txt
+    # Use an official Python runtime as a parent image
+    FROM python:3.11.4
+
+    # Set the working directory in the container to /app
+    WORKDIR /GW_WEB_CHAT
+
+    # Add the current directory contents into the container at /app
+    ADD . /GW_WEB_CHAT
+
+    # Install any needed packages specified in requirements.txt
+    RUN pip install --no-cache-dir -r requirements.txt
+
+    # Make port 5000 available to the world outside this container
+    EXPOSE 5000
+
+    # Run app.py when the container launches
+    CMD ["python", "app.py"]
+    ```
+  - `requirements.txt`の内容を確認・・・`Flask==2.1.0`バージョンが正確かどうか
+  - 次は、Dockerをcentosにインストールする。[公式documentインストール方法](https://docs.docker.com/engine/install/centos/)
+    - `sudo yum install -y yum-utils`
+    - `sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo`
+    - `sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
+    - `sudo systemctl start docker`
+    - dockerが正常にインストールされているか？=> `sudo docker run hello-world`
+
+- repositoryの内容をビルドしてdocker imageを生成
+  - `sudo docker build -t serori_web_chat .`
+- `docker images`でimageが正常に作成されたかどうかを確認する
+- `sudo docker run -p 5000:5000 serori_web_chat`でコンテナを走らせる！！これで成功なはずや！！！おめてどう！
+- コンテナのweb applicationを確認するために！もう一個のshellを立ち上げて(centosのshell！)、`curl <ip-address>:5000`でやってみてください！返事があると成功やで！！！
