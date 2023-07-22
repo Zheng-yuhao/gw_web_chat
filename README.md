@@ -229,3 +229,6 @@ last edit:20230628
 次のステップは(準備中・・・)  
 1. Dockerのコンテナとしてローカル上に走らせる
 2. Docker imageを使ってGCP上にDeployする
+3. 
+
+waiting.........
